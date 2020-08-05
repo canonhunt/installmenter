@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installment Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cont">
+      <div class="col-1">
+        <h1>Installment Calculator</h1>
+      </div>
+      <div class="col-2-1 formbox">
+        <form id="form" class="fbox">
+          <!-- <form id="form" class="form" onchange="calculate()"> -->
+          <div class="flexy fbox--1">
+            <label for="startdate">Date of Issue</label>
+            <input
+              type="date"
+              name="startdate"
+              id="startdate"
+              placeholder="DD/MM/YY"
+            />
+          </div>
+          <div class="flexy fbox--2">
+            <label for="enddate">Date of Renewal </label
+            ><input
+              type="date"
+              name="enddate"
+              id="enddate"
+              placeholder="DD/MM/YY"
+            />
+          </div>
+          <div class="flexy fbox--3">
+            <label for="contractvalue"> Contract Value </label>
+            <input
+              type="number"
+              name="contractvalue"
+              id="contractvalue"
+              placeholder="9999"
+            />
+          </div>
+          <div class="flexy fbox--4">
+            <label for="servicetax">Service Tax </label>
+            <input type="text" id="servicetax" placeholder="99.99" />
+          </div>
+          <button type="submit">Calculate</button>
+        </form>
+      </div>
+      <br />
+      <div class="col-2-2 fbox2">
+        <div>
+          <h3>
+            Installment Without Tax (I.W.T)
+          </h3>
+          <span id="rescv">Contract Value</span> &#247;
+          <span id="resmoc">Month of contract</span>
+          <span class="iwtres center">I.W.T</span>
+        </div>
+        <div>
+          <h3>Tax On Installment (T.O.I)</h3>
+          <span id="restx">Service Tax</span> of
+          <span class="iwtres">installment without tax</span>
+          <span class="toires center"> T.O.I</span>
+        </div>
+        <div>
+          <h3>Installment Value (I.V)</h3>
+          <span class="iwtres">installment without tax</span> +
+          <span class="toires"> Tax on Installment</span>
+          <span id="fnliv" class="center">I.V</span>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
