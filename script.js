@@ -32,26 +32,26 @@ form.addEventListener("submit", function (e) {
     }
     function test(d1, d2) {
       var diff = monthDiff(d1, d2);
-      // console.log(
-      //   d1.toISOString().substring(0, 10),
-      //   "to",
-      //   d2.toISOString().substring(0, 10),
-      //   ":",
-      //   diff
-      // );
+      console.log(
+        d1.toISOString().substring(0, 10),
+        "to",
+        d2.toISOString().substring(0, 10),
+        ":",
+        diff
+      );
       return diff;
     }
     const months = test(dateconvert(startdate), dateconvert(enddate));
-    // console.log(months);
+    console.log(months);
 
     const instvwithoutax = parseFloat(parseInt(contval) / months);
-    // console.log("investment without tax:", instvwithoutax);
+    console.log("investment without tax:", instvwithoutax);
 
     const taxoninst = instvwithoutax * (parseFloat(servtax) / 100);
-    // console.log("tax on installment: ", taxoninst);
+    console.log("tax on installment: ", taxoninst);
 
     const toinstal = (instvwithoutax + taxoninst).toFixed(2);
-    // console.log("total of everything:", toinstal);
+    console.log("total of everything:", toinstal);
     const address = parseInt(contval) + parseFloat(servtax);
 
     const rescv = document.getElementById("rescv");
