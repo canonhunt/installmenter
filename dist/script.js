@@ -13,13 +13,14 @@ form.addEventListener("submit", function (e) {
     console.log(startdate);
     function dateconvert(str1) {
       // const stdate = str1.split("/").reverse().join("");
-      const stdate = str1.split("-").reverse().join("");
+      const stdate = str1.split("-").join("");
       const arr = [];
       arr.push(Number(stdate.slice(0, 4)));
       arr.push(Number(stdate.slice(4, 6)));
+
       arr.push(Number(stdate.slice(6, 8)));
 
-      return new Date(arr[2], arr[1], arr[0]);
+      return new Date(arr[0], arr[1], arr[2]);
     }
 
     function monthDiff(d1, d2) {
@@ -31,26 +32,26 @@ form.addEventListener("submit", function (e) {
     }
     function test(d1, d2) {
       var diff = monthDiff(d1, d2);
-      // console.log(
-      //   d1.toISOString().substring(0, 10),
-      //   "to",
-      //   d2.toISOString().substring(0, 10),
-      //   ":",
-      //   diff
-      // );
+      console.log(
+        d1.toISOString().substring(0, 10),
+        "to",
+        d2.toISOString().substring(0, 10),
+        ":",
+        diff
+      );
       return diff;
     }
     const months = test(dateconvert(startdate), dateconvert(enddate));
-    // console.log(months);
+    console.log(months);
 
     const instvwithoutax = parseFloat(parseInt(contval) / months);
-    // console.log("investment without tax:", instvwithoutax);
+    console.log("investment without tax:", instvwithoutax);
 
     const taxoninst = instvwithoutax * (parseFloat(servtax) / 100);
-    // console.log("tax on installment: ", taxoninst);
+    console.log("tax on installment: ", taxoninst);
 
     const toinstal = (instvwithoutax + taxoninst).toFixed(2);
-    // console.log("total of everything:", toinstal);
+    console.log("total of everything:", toinstal);
     const address = parseInt(contval) + parseFloat(servtax);
 
     const rescv = document.getElementById("rescv");
