@@ -13,13 +13,14 @@ form.addEventListener("submit", function (e) {
     console.log(startdate);
     function dateconvert(str1) {
       // const stdate = str1.split("/").reverse().join("");
-      const stdate = str1.split("-").reverse().join("");
+      const stdate = str1.split("-").join("");
       const arr = [];
       arr.push(Number(stdate.slice(0, 4)));
       arr.push(Number(stdate.slice(4, 6)));
+
       arr.push(Number(stdate.slice(6, 8)));
 
-      return new Date(arr[2], arr[1], arr[0]);
+      return new Date(arr[0], arr[1], arr[2]);
     }
 
     function monthDiff(d1, d2) {
